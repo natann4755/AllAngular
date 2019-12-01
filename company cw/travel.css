@@ -1,0 +1,26 @@
+
+div{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: lightgray;   
+}
+.clas1{  
+    background: orange;
+    text-align: center;
+    border: 5px dashed blue;
+    margin:4%;
+}
+.clas2{  
+    margin: auto;
+}
+
+
+table{
+    margin: auto;
+}
+label{
+    display: inline-block;
+    width:100px ;
+}

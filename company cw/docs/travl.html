@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>travles</title>
+    <link rel="stylesheet" type="text/css" href="travel.css">
+</head>
+<body>
+
+    <div class="bigdiv">
+        <div id="sdiv">
+            <section class="clas1">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>code</th>
+                            <th>name</th>
+                            <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="b1">
+                        
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="clas1">
+                <label for="name">name</label><input id="name"><br>
+                <label for="pid">person id</label><input id="pid"><br>
+                <label for="tid">travel id</label><input id="tid"><br>
+                <label for="passengers">passengers</label><input id="passengers"><br>
+                <button onclick="travl()">send</button>
+            </section>
+        </div>
+        <div>
+                <section class="clas1">
+                        <table table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+                                        <th>man id</th>
+                                        <th>contry</th>
+                                        <th>passengers</th>
+                                        <th>total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="b2">
+                                    
+                                </tbody>
+                            </table>
+    
+                </section>
+
+                <section class="clas1">
+                    <label for="sname">search by name</label><input id="sname">
+                    <button onclick="findd()">find</button>
+                        <table table border="1">
+                                <thead>
+                                    <tr>
+                                        <th>id</th>
+                                        <th>name</th>
+                                        <th>totalpassengers</th>
+                                        <th>total</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="b3">
+                                    
+                                </tbody>
+                            </table>
+    
+                </section>
+            </div>
+            <div>
+               
+                    <section class="clas1 clas2">
+                        <p>chose city</p>
+                        <select id="selec" onchange="chang()">
+                            <option>couse</option>
+                            <option value="yerushalaym">yerushalaym</option>
+                            <option value="london">london</option>
+                            <option value="brisel">brisel</option>
+                            <option value="teiman">teiman</option>
+                            <option value="prag">prag</option>
+                            <option value="hongkong">hongkong</option>
+                            <option value="maroko">maroko</option>
+                            <option value="sumalya">sumalya</option>
+                            <option value="varsha">varsha</option>
+                        </select>
+                    </br></br>
+                        
+
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>name</th>
+                                    <th>totalpassengers</th>
+                                    <th>total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="b4">
+                                
+                            </tbody>
+                        </table> 
+                        
+                        <p id="total">total mony=</p>
+            </div>
+    </div>
+    <script src="travel.js"></script>
+</body>
+</html>

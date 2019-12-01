@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        n1=4, n2 =99, n3=85;
+         
+          function sumas(a,b,c,collbec,time){
+              let d = new Date()
+         console.log('asnc start',a,b,c,d.getMilliseconds())
+            setTimeout(function(){
+              console.log('asc and',d.getMilliseconds())
+              let to = sum(a,b,c)
+               collbec(to)},time)
+        }
+
+
+        function sum(a,b,c){
+            console.log('i am sum',a,b,c)
+            return a+b+c
+        }
+        console.log("runn1");
+
+        sumas(n1,n2,n3,function daberitii(totall){
+                console.log("coll bec");
+                console.log(totall);
+        },1000)
+
+        console.log("runn2");
+
+        sumas(n1,n2,n3,function daberitii(totall){
+                console.log("runn");
+                console.log(totall);
+        },20000)
+
+        console.log("runn3");
+
+        sumas(n1,n2,n3,function daberitii(totall){
+                console.log("runn");
+                console.log(totall);
+        },3000)
+
+        console.log("runn4");
+       
+        total = sum(n1,n2,n3) 
+        console.log(total);
+        console.log("runn5");
+      
+
+        
+
+        // function sumas(a,b,c,collbec){
+        //     console.log('i am asnc',a,b,c)
+        //    setTimeout(function(){
+        //        console.log('asc and')
+        //        daberiti(a+b+c)},220)
+        // }
+
+        //  function mult(a,b,c){
+        //     console.log('i am mult',a,b,c)
+        //     let t = a*b*c
+        //     return t
+        // }
+
+        // let totalmu=mult(n1,n2,n3)
+        // consol.log(totalmu)
+        // let total=sum(n1,n2,n3)
+        // consol.log(total)
+
+        // daberiti(a+b+c,function(result){
+        //     consol.log("i am dabe iti")})
+
+        //     </script>
+    
+</body>
+</html>

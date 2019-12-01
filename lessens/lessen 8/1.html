@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d"></div>
+
+    <script>
+       
+    function ass(a,b,coolbek){
+        console.log("ass start");
+        setTimeout(function(){
+            console.log("ass 2");
+            let to= a+b
+            coolbek(to)            
+        },1150)
+    }
+    console.log("running");
+    ass(15,30,function collbecc(total){
+        console.log("collbac work")
+        console.log(total)
+    })
+    console.log("running");
+    function sum(a,b){
+        return a+b
+    }
+    console.log("running");
+    total = sum(5,6)
+    console.log(total);
+    
+
+    </script>
+</body>
+</html>

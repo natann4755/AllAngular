@@ -1,0 +1,110 @@
+
+
+
+
+<div id="tasks">
+<style>
+    .stat{
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        background: green;
+    }
+    .stat.w8{background: orange;}
+    .shhh{opacity:0.5;}
+</style>
+    <span>title</span><br>
+    <input type="checkbox">
+    <span class="stat"></span>
+    <br>
+    <button onclick="next()">next</button>     
+</div>
+
+<script>
+    let index = 0
+    
+    function populateTask(taskItem){
+        let t = document.getElementById('tasks')
+        t.querySelector('span').innerHTML = taskItem.title
+        t.querySelector('input').checked = taskItem.completed
+        t.querySelector('button').disabled = ''
+        t.querySelector('span.stat').className = 'stat'
+        t.className = ''
+    }
+
+
+    function next(){
+        document.querySelector('.stat').className = 'stat w8'
+        document.querySelector('#tasks').className = 'shhh'
+        document.querySelector('button').disabled = 'disabled'
+
+        let x = new XMLHttpRequest();
+        x.onload = function() {
+            let item = JSON.parse(this.responseText)
+            console.log(item);
+            populateTask(item)
+        };
+        x.open("GET", "https://jsonplaceholder.typicode.com/todos/" + (++index));
+        x.send()
+    }
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+
+    //asycs
+    function sumAsyc(a,b,callback){ //muki is callback
+        console.log('2 called sumAsyc');
+        setTimeout(function(){
+            console.log('3 timeout sumAsyc');
+            let t = a+b
+            callback(t)
+        }, 150)
+    }
+
+    console.log('1 call sumAsyc');
+    sumAsyc(3,4, function callbackSum(tOfCallback){
+        console.log('4 callbackSum sumAsyc');
+        console.log(tOfCallback);
+    })
+
+    //standard
+    function sum(a,b){   return a+b   }
+    yaMoo = sum(5,6)
+    console.log('code is running');
+    console.log(yaMoo);
+    console.log('code is running');
+
+
+
+
+    
+    let x = new XMLHttpRequest();
+    x.onload = function() {
+        console.log(JSON.parse(this.responseText));
+    };
+    x.open("GET", "https://jsonplaceholder.typicode.com/todos");
+    x.send()
+
+
+
+
+
+
+
+
+
+
+
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => console.log(json))
+
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>last name</th>
+                <th>chasidus</th>
+                <th>slary</th>
+                <th>yeshiva</th>
+                <th>grup</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+    
+    let avrech = function(id,name,lastName,chasidus,slary,yeshiva,grup){
+        this.id = id
+        this.name = name
+        this.lastName=lastName
+        this.chasidus = chasidus
+        this.slary = slary
+        this.yeshiva=yeshiva
+        this.grup=grup
+    }
+    let arrAvrech=[
+        new avrech(1,'aa','aaaa','alecsander',1000,'aotchot',1),
+        new avrech(2,'bb','bbbb','beyale',2000,'aotchot',2), 
+        new avrech(3,'cc','cccc','gur',3000,'aotchot',3),
+        new avrech(4,'dd','dddd','dorg',4000,'aotchot',1),
+        new avrech(5,'ee','eeee','halmin',5000,'aotchot',2),
+        new avrech(6,'ff','ffff','v',6000,'aotchot',3),
+        new avrech(7,'gg','gggg','z',7000,'aotchot',1), 
+        new avrech(8,'hh','hhhh','ch',8000,'aotchot',2),
+        new avrech(9,'rr','rrrr','t',9000,'aotchot',3),
+        new avrech(10,'jj','jjjj','y',10000,'aotchot',1)
+    ]
+
+    let templateAvrech = `<tr><td>{{id}}</td>
+                <td>{{name}}</td>
+                <td>{{lastName}}</td>
+                <td>{{chasidus}}</td>
+                <td>{{slary}}</td>
+                <td>{{yeshiva}}</td>
+                <td>{{grup}}</td>
+            </tr>`
+    let TableBody = document.querySelector('tbody')
+    console.log(TableBody)
+
+    arrAvrech.forEach(alement=>
+    TableBody.innerHTML+=renderr(templateAvrech,alement))
+
+    function renderr(templateAvrech,alement){
+        let arr1=templateAvrech.split('{{')
+        console.log(arr1)
+        for (let index = 1; index < arr1.length; index++) {
+            let ele = arr1[index];
+            let arr2 = ele.split('}}') 
+            console.log(arr2)
+            arr1[index]=alement[arr2[0]]+arr2[1]
+            // console.log (arr1.join())
+        }
+        return (arr1.join(''))
+        console.log (arr1.join(''))
+
+        
+       
+        
+
+
+    }
+
+
+    </script>
+</body>
+</html>

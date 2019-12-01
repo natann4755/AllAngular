@@ -1,0 +1,39 @@
+<div style="margin-top: 150px;">
+    <span onclick="numzy(1)">1</span>
+    <span onclick="numzy(2)">2</span>
+    <span onclick="numzy(3)">3</span>
+
+    <span onclick="numzy('+')">+</span>
+
+    <span onclick="calc()">=</span>
+</div>
+
+<div id="targil"></div>
+<div id="result"></div>
+
+<script>
+    let numz = []
+
+    function numzy(n){
+        numz.push(n);
+       
+    }
+
+    function calc(){
+        let n = '' ,total = 0;
+        for (let i = 0; i < numz.length; i++) {
+            let c = numz[i];
+            if (typeof c == "number") {
+                n += c;
+            } else {
+                //switch +-*/
+                total += parseInt(n);
+                n=''
+            }
+        }
+        total += parseInt(n);
+        numz=[]
+        document.getElementById('result').innerHTML = total
+    }
+
+</script>
